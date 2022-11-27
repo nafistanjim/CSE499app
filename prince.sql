@@ -38,14 +38,14 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`CATEGORY_ID`, `CNAME`) VALUES
-(0, 'Keyboard'),
-(1, 'Mouse'),
-(2, 'Monitor'),
-(3, 'Motherboard'),
-(4, 'Processor'),
-(5, 'Power Supply'),
-(6, 'Headset'),
-(7, 'CPU'),
+(0, '1'),
+(1, '2'),
+(2, '3'),
+(3, '4'),
+(4, '5'),
+(5, '6'),
+(6, '7'),
+(7, '8'),
 (9, 'Others');
 
 -- --------------------------------------------------------
