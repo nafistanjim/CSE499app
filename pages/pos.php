@@ -132,8 +132,14 @@ function pre_r($array){
              <th width="10%">Quantity</th>  
              <th width="15%">Price</th>  
              <th width="15%">Total</th>  
-             <th width="5%">Action</th>  
-        </tr>  
+             <th width="5%">Action</th> 
+        </tr> 
+        
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="../pages/scanner/index.html">SCAN</a>
+          </li>
+        </ul>
         <?php  
 
         if(!empty($_SESSION['pointofsale'])):  
