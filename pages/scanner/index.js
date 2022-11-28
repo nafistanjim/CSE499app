@@ -41,11 +41,11 @@ function enableCam(event) {
 }
 
 // Store the resulting model in the global scope of our app.
-//var model = undefined;
-var model = "model.tflite";
+var model = undefined;
+//var model = "model.tflite";
 
 tflite.ObjectDetector.create(
-//  "https://tfhub.dev/tensorflow/lite-model/ssd_mobilenet_v1/1/metadata/2?lite-format=tflite"
+  "https://tfhub.dev/tensorflow/lite-model/ssd_mobilenet_v1/1/metadata/2?lite-format=tflite"
 //tflite.ObjectDetector.create(
 //  "E:\\Downloads\\Run-TFLITE-models-on-the-web-master\\Run-TFLITE-models-on-the-web-master\\live_object_detection_example\\model.tflite"
 ).then((loadedModel) => {
