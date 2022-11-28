@@ -137,7 +137,7 @@ function pre_r($array){
         
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link active" href="../pages/scanner/index.html">SCAN</a>
+            <a class="nav-link active" href="/pages/scanner/index.html">SCAN</a>
           </li>
         </ul>
         <?php  
