@@ -67,11 +67,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`CUST_ID`, `FIRST_NAME`, `LAST_NAME`, `PHONE_NUMBER`) VALUES
-(9, 'Hailee', 'Steinfield', '09394566543'),
+(9, 'Basma', 'Azmal', '09394566543'),
 (11, 'A Walk in Customer', NULL, NULL),
-(14, 'Chuchay', 'Jusay', '09781633451'),
-(15, 'Kimbert', 'Duyag', '09956288467'),
-(16, 'Dieqcohr', 'Rufino', '09891344576');
+(14, 'Shifa', 'Chaudhury', '09781633451'),
+(15, 'Anika', 'Bushra', '09956288467'),
+(16, 'MD', 'Kiron', '09891344576');
 
 -- --------------------------------------------------------
 
@@ -96,9 +96,9 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`EMPLOYEE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `EMAIL`, `PHONE_NUMBER`, `JOB_ID`, `HIRED_DATE`, `LOCATION_ID`) VALUES
-(1, 'Prince Ly', 'Cesar', 'Male', 'princelycesar23@gmail.com', '09124033805', 1, '0000-00-00', 113),
-(2, 'Josuey', 'Mag-asos', 'Male', 'jmagaso@yahoo.com', '09091245761', 2, '2019-01-28', 156),
-(4, 'Monica', 'Empinado', 'Female', 'monicapadernal@gmail.com', '09123357105', 1, '2019-03-06', 158);
+(1, 'Indra', 'Roy', 'Male', 'indra.roy@gmail.com', '09124033805', 1, '0000-00-00', 113),
+(2, 'Azfer', 'Shams', 'Male', 'azfer.shams@yahoo.com', '09091245761', 2, '2019-01-28', 156),
+(4, 'Monica', 'Zebin', 'Female', 'monica.zebin@gmail.com', '09123357105', 1, '2019-03-06', 158);
 
 -- --------------------------------------------------------
 
@@ -192,8 +192,8 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`FIRST_NAME`, `LAST_NAME`, `LOCATION_ID`, `EMAIL`, `PHONE_NUMBER`) VALUES
-('Prince Ly', 'Cesar', 113, 'PC@00', '09124033805'),
-('Emman', 'Adventures', 116, 'emman@', '09123346576'),
+('Nafis', 'Tanjim', 113, 'PC@00', '09124033805'),
+('Emman ', 'Adventures', 116, 'emman@', '09123346576'),
 ('Bruce', 'Willis', 113, 'bruce@', NULL),
 ('Regine', 'Santos', 111, 'regine@', '09123456789');
 
@@ -226,28 +226,29 @@ INSERT INTO `product` (`PRODUCT_ID`, `PRODUCT_CODE`, `NAME`, `DESCRIPTION`, `QTY
 (4, '20191002', 'Adafil', 'Tadlafi 10 mg', 1, 1, 550, 0, 11, '2019-03-02'),
 (5, '20191002', 'Aeronid 200', 'HFA Inhelar', 1, 1, 550, 0, 15, '2019-03-03'),
 (6, '20191002', 'Alphin DS', 'Albendazole 400mg', 1, 1, 550, 0, 11, '2019-03-04'),
-(8, '20191002', 'Amdocal', 'Amlodipine', 1, 1, 550, 0, 11, '2019-03-05'),
-(9, '20191002', 'Amdocal Plus', 'Anlodipine & Arenolol', 1, 1, 550, 0, 11, '2019-03-04'),
-(10, '20191004', 'Amdocal Pro', 'Anlodipine & Bisoprolol', 1, 1, 859, 6, 13, '2019-03-06'),
-(11, '20191004', 'Amdopril', 'Perindopril', 1, 1, 895, 6, 13, '2019-03-01'),
-(12, '20191004', 'Amdova', 'Atovastatin', 1, 1, 895, 6, 13, '2019-03-01'),
-(13, '20191004', 'Antacide MAX', 'Tab', 1, 1, 895, 6, 13, '2019-03-01'),
-(14, '20191002', 'Anustat', 'Oinment', 1, 1, 550, 0, 15, '2019-03-06'),
-(15, '20191002', 'Apresin', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
-(16, '20191002', 'Aristocal', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
-(17, '20191002', 'Aristocal D', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
-(18, '20191002', 'Aristocal M', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
-(19, '20191002', 'Aristoferon', 'Syrup', 1, 1, 550, 0, 15, '2019-03-06'),
-(20, '20191002', 'Aristoplex', 'Syrup', 1, 1, 550, 0, 15, '2019-03-06'),
-(21, '20191002', 'Aristovit B', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
-(22, '20191001', 'Aristovit X', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
-(23, '20191001', 'Aristovit M', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
-(24, '20191001', 'Arixon', 'Injection', 1, 1, 32999, 7, 12, '2019-03-11'),
-(25, '20191001', 'Arlin', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
-(26, '20191001', 'Ascobex', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
+(7, '20191002', 'Amdocal', 'Amlodipine', 1, 1, 550, 0, 11, '2019-03-05'),
+(8, '20191002', 'Amdocal Plus', 'Anlodipine & Arenolol', 1, 1, 550, 0, 11, '2019-03-04'),
+(9, '20191004', 'Amdocal Pro', 'Anlodipine & Bisoprolol', 1, 1, 859, 6, 13, '2019-03-06'),
+(10, '20191004', 'Amdopril', 'Perindopril', 1, 1, 895, 6, 13, '2019-03-01'),
+(11, '20191004', 'Amdova', 'Atovastatin', 1, 1, 895, 6, 13, '2019-03-01'),
+(12, '20191004', 'Antacide MAX', 'Tab', 1, 1, 895, 6, 13, '2019-03-01'),
+(13, '20191002', 'Anustat', 'Oinment', 1, 1, 550, 0, 15, '2019-03-06'),
+(14, '20191002', 'Apresin', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
+(15, '20191002', 'Aristocal', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
+(16, '20191002', 'Aristocal D', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
+(17, '20191002', 'Aristocal M', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
+(18, '20191002', 'Aristoferon', 'Syrup', 1, 1, 550, 0, 15, '2019-03-06'),
+(19, '20191002', 'Aristoplex', 'Syrup', 1, 1, 550, 0, 15, '2019-03-06'),
+(20, '20191002', 'Aristovit B', 'Tablet', 1, 1, 550, 0, 15, '2019-03-06'),
+(21, '20191001', 'Aristovit X', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
+(22, '20191001', 'Aristovit M', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
+(23, '20191001', 'Arixon', 'Injection', 1, 1, 32999, 7, 12, '2019-03-11'),
+(24, '20191001', 'Arlin', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
+(25, '20191001', 'Ascobex', 'Tablet', 1, 1, 32999, 7, 12, '2019-03-11'),
+(26, '20191005', 'Atova', 'Tablet', 1, 1, 289, 1, 16, '2019-03-13'),
 (27, '20191005', 'Atova', 'Tablet', 1, 1, 289, 1, 16, '2019-03-13'),
 (28, '20191006', 'BGHT', 'Tablet', 1, 1, 289, 1, 16, '2019-03-13');
--- --------------------------------------------------------
+---------------------------------------------------------
 
 --
 -- Table structure for table `supplier`
@@ -265,11 +266,11 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`SUPPLIER_ID`, `COMPANY_NAME`, `LOCATION_ID`, `PHONE_NUMBER`) VALUES
-(11, 'InGame Tech', 114, '09457488521'),
-(12, 'Asus', 115, '09635877412'),
-(13, 'Razer Co.', 111, '09587855685'),
-(15, 'Strategic Technology Co.', 116, '09124033805'),
-(16, 'A4tech', 155, '09775673257');
+(11, 'Beximco', 114, '09457488521'),
+(12, 'Renata', 115, '09635877412'),
+(13, 'Incepta', 111, '09587855685'),
+(15, 'Aristopharma', 116, '09124033805'),
+(16, 'ACI', 155, '09775673257');
 
 -- --------------------------------------------------------
 
@@ -326,22 +327,22 @@ CREATE TABLE `transaction_details` (
 --
 -- Dumping data for table `transaction_details`
 --
-
 INSERT INTO `transaction_details` (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE`, `EMPLOYEE`, `ROLE`) VALUES
-(7, '0318160336', 'Lenovo ideapad 20059', '2', '32999', 'Prince Ly', 'Manager'),
-(8, '0318160336', 'Predator Helios 300 Gaming Laptop', '5', '77850', 'Prince Ly', 'Manager'),
-(9, '0318160336', 'A4tech OP-720', '6', '289', 'Prince Ly', 'Manager'),
-(10, '0318160622', 'Newmen E120', '2', '550', 'Prince Ly', 'Manager'),
-(11, '0318160622', 'A4tech OP-720', '3', '289', 'Prince Ly', 'Manager'),
-(12, '0318170309', 'Newmen E120', '1', '550', 'Prince Ly', 'Manager'),
-(13, '0318170352', 'Predator Helios 300 Gaming Laptop', '1', '77850', 'Prince Ly', 'Manager'),
-(14, '0318170511', 'Fantech EG1', '2', '859', 'Prince Ly', 'Manager'),
-(15, '0318170524', 'Fantech EG1', '2', '859', 'Prince Ly', 'Manager'),
-(16, '0318170551', 'Fantech EG1', '2', '859', 'Prince Ly', 'Manager'),
-(17, '0318170624', 'A4tech OP-720', '1', '289', 'Prince Ly', 'Manager'),
-(18, '0318170825', 'A4tech OP-720', '1', '289', 'Prince Ly', 'Manager'),
-(19, '0318170825', 'Fantech EG1', '1', '859', 'Prince Ly', 'Manager'),
-(20, '0318194016', 'Newmen E120', '10', '550', 'Josuey', 'Cashier');
+
+(7, '0318160336', 'Amdocal', '2', '32999', 'Nafis', 'Manager'),
+(8, '0318160336', 'Amdocal Plus', '5', '77850', 'Nafis', 'Manager'),
+(9, '0318160336', 'Amdocal Pro', '6', '289', 'Nafis', 'Manager'),
+(10, '0318160622', 'Amdopril', '2', '550', 'Nafis', 'Manager'),
+(11, '0318160622', 'Amdova', '3', '289', 'Nafis', 'Manager'),
+(12, '0318170309', 'Antacide MAX', '1', '550', 'Nafis', 'Manager'),
+(13, '0318170352', 'Anustate', '1', '77850', 'Nafis', 'Manager'),
+(14, '0318170511', 'Apresin', '2', '859', 'Nafis', 'Manager'),
+(15, '0318170524', 'Aristocal', '2', '859', 'Nafis', 'Manager'),
+(16, '0318170551', 'Aristocal D', '2', '859', 'Nafis', 'Manager'),
+(17, '0318170624', 'Aristocal M', '1', '289', 'Nafis', 'Manager'),
+(18, '0318170825', 'Aristoferon', '1', '289', 'Nafis', 'Manager'),
+(19, '0318170825', 'Aristoplex', '1', '859', 'Nafis', 'Manager'),
+(20, '0318194016', 'Aristovit B', '10', '550', 'Josuey', 'Cashier');
 
 -- --------------------------------------------------------
 
