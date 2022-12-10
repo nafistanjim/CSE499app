@@ -178,7 +178,6 @@ function pre_r($array){
              endforeach;  
         ?>
 
-
         <?php  
         endif;
         ?>  
