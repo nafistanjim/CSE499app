@@ -78,31 +78,31 @@ function pre_r($array){
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs">
                               <li class="nav-item">
-                                <a class="nav-link" href="#" data-target="#keyboard" data-toggle="tab">Keyboard</a>
+                                <a class="nav-link" href="#" data-target="#keyboard" data-toggle="tab">1</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#" data-target="#mouse" data-toggle="tab">Mouse</a>
+                                <a class="nav-link" href="#" data-target="#mouse" data-toggle="tab">2</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#headset" data-toggle="tab">Headset</a>
+                                <a class="nav-link" href="#headset" data-toggle="tab">3</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#cpu" data-toggle="tab">CPU</a>
+                                <a class="nav-link" href="#cpu" data-toggle="tab">4</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#monitor" data-toggle="tab">Monitor</a>
+                                <a class="nav-link" href="#monitor" data-toggle="tab">5</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#motherboard" data-toggle="tab">Motherboard</a>
+                                <a class="nav-link" href="#motherboard" data-toggle="tab">6</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#processor" data-toggle="tab">Processor</a>
+                                <a class="nav-link" href="#processor" data-toggle="tab">7</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#powersupply" data-toggle="tab">Power Supply</a>
+                                <a class="nav-link" href="#powersupply" data-toggle="tab">8</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#others" data-toggle="tab">Others</a>
+                                <a class="nav-link" href="#others" data-toggle="tab">9</a>
                               </li>
                             </ul>
 
@@ -177,7 +177,6 @@ function pre_r($array){
                   $total = $total + ($product['quantity'] * $product['price']);
              endforeach;  
         ?>
-
 
         <?php  
         endif;
