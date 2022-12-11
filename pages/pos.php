@@ -105,6 +105,8 @@ function pre_r($array){
                                 <a class="nav-link" href="#others" data-toggle="tab">9</a>
                               </li>
                             </ul>
+                            <!-- Search form -->
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
 
 <!-- TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->
 <?php include 'postabpane.php'; ?>
