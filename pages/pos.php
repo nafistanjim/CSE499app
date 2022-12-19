@@ -152,7 +152,11 @@ function pre_r($array){
                             while($row = mysqli_fetch_array($query)){
                               echo '<div class="result">';
                               echo '<a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a>';
+                              echo '  ';
+                              // add product to POS the
+                              echo '<a href="pos.php?action=add&id='.$row['PRODUCT_ID'].'" class="btn btn-success btn-sm">Add Item</a>';
                               echo '</div>';
+
                             }
 
                             ?>
