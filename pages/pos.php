@@ -84,7 +84,7 @@ function pre_r($array){
                                 <a class="nav-link" href="#" data-target="#mouse" data-toggle="tab">2</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#headset" data-toggle="tab">3</a>
+                                <a class="nav-link" href="#" data-toggle="#Acifix">3</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="#cpu" data-toggle="tab">4</a>
@@ -106,7 +106,42 @@ function pre_r($array){
                               </li>
                             </ul>
                             <!-- Search form -->
-                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        
+                            <form action="" method="GET" name="">
+	                            <table>
+		                            <tr>
+			                            <td><input type="text" name="k" value="<?php echo isset($_GET['k']) ? $_GET['k'] : ''; ?>" placeholder="Enter your search keywords" /></td>
+			                            <td><input type="submit" name="" value="Search" /></td>
+		                            </tr>
+	                            </table>
+                            </form>
+
+                            <?php
+                            // get the search terms from the url
+                            $k = isset($_GET['k']) ? $_GET['k'] : '';
+
+                            // create the base variables for building the search query
+                            $search_string = "SELECT * FROM product WHERE ";
+                            $display_words = "";
+					
+                            // format each of search keywords into the db query to be run
+                            $keywords = explode(' ', $k);			
+                            foreach ($keywords as $word){
+	                            $search_string .= "NAME LIKE '%".$word."%' OR ";
+	                            $display_words .= $word.' ';
+                            }
+                            $search_string = substr($search_string, 0, strlen($search_string)-4);
+                            $display_words = substr($display_words, 0, strlen($display_words)-1);
+    
+                            // run the query and get the results
+
+                            $query = mysqli_query($db, $search_string);
+                            $result_count = mysqli_num_rows($query);
+
+                            echo '<div class="right"><b><u>'.number_format($result_count).'</u></b> results found</div>';
+                            echo 'Your search for <i>"'.$display_words.'"</i><hr />';
+                            ?>
+
 
 <!-- TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->
 <?php include 'postabpane.php'; ?>
