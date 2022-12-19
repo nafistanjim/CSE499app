@@ -111,9 +111,6 @@ function pre_r($array){
                               <li class="nav-item">
                                 <a class="nav-link" href="#others" data-toggle="tab">9</a>
                               </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#search" data-toggle="tab">Search/Scan</a>
-                              </li>
                             </ul>
 
                             <!-- Search form -->
@@ -123,10 +120,17 @@ function pre_r($array){
 		                            <tr>
 			                            <td><input type="text" name="k" value="<?php echo isset($_GET['k']) ? $_GET['k'] : ''; ?>" placeholder="Search" /></td>
 			                            <td><input type="submit" name="" value="Search" /></td>
+                                  <td><input type="button" value="Scan" name="Scan"/></td>
 		                            </tr>
 	                            </table>
                             </form>
-
+                            <?php 
+                                if(isset($_POST['Scan'])){
+                                    $file = file_get_contents("output.txt", true);
+                                    echo $file;
+                                }
+                            ?>
+                            
                             <?php
                             // get the search terms from the url
                             $k = isset($_GET['k']) ? $_GET['k'] : '';
@@ -148,13 +152,14 @@ function pre_r($array){
 
                             $query = mysqli_query($db, $search_string);
                             $result_count = mysqli_num_rows($query);
-
+                            if($result_count < 125){
                             echo '<div class="right"><b><u>'.number_format($result_count).'</u></b> results found</div>';
                             echo 'Your search for <i>"'.$display_words.'"</i><hr />';
                             while($row = mysqli_fetch_array($query)){
                               echo '<div class="result"><a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a></div>';
                               //add button to each product
                               echo '<input type="submit" action="pos.php?action=add&id='.$row['PRODUCT_ID'].' name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />';
+                            }
                             }
                             ?>
 
