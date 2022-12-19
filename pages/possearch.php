@@ -1,8 +1,8 @@
                               <!-- Search -->
                               <div class="tab-pane fade in mt-2" id="search">
                                 <?php
-                                    $k=$_POST[k];
-                                      <?php  $query = 'SELECT * FROM product WHERE PRODUCT_NAME = '$k' GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
+                                    $x = isset($_GET['k']) ? $_GET['k'] : '';?>
+                                      <?php  $query = 'SELECT * FROM product WHERE NAME='$x' GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
                                         $result = mysqli_query($db, $query);
 
                                         if ($result):
