@@ -154,12 +154,7 @@ function pre_r($array){
                             while($row = mysqli_fetch_array($query)){
                               echo '<div class="result"><a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a></div>';
                               //add button to each product
-                              echo '<form method="post" action="pos.php?action=add&id='.$row['PRODUCT_ID'].'>' ;
-                              echo '<input type="hidden" name="quantity" value="1" />';
-                              echo '<input type="hidden" name="name" value="'.$row['NAME'].'" />';
-                              echo '<input type="hidden" name="price" value="'.$row['PRICE'].'" />';
-                              echo '<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />';
-                              echo '</form>';
+                              echo '<input type="submit" action="pos.php?action=add&id='.$row['PRODUCT_ID'].' name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />';
                             }
                             ?>
 
