@@ -154,7 +154,7 @@ function pre_r($array){
                                   
 
 
-
+<?php include 'possearch.php'; ?>
 <!-- TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->
 <?php include 'postabpane.php'; ?>
 <!-- END TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->
