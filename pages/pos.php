@@ -14,12 +14,16 @@ if(filter_input(INPUT_POST, 'addpos')){
         
         //create sequantial array for matching array keys to products id's
         $product_ids = array_column($_SESSION['pointofsale'], 'id');
+        #$product_ids = array_column($_SESSION['pointofsale'], 'name');
 
         if (!in_array(filter_input(INPUT_GET, 'id'), $product_ids)){
+        #if (!in_array(filter_input(INPUT_GET, 'name'), $product_ids)){
         $_SESSION['pointofsale'][$count] = array
             (
                 'id' => filter_input(INPUT_GET, 'id'),
+                #'id' => filter_input(INPUT_POST, 'id'),
                 'name' => filter_input(INPUT_POST, 'name'),
+                #'name' => filter_input(INPUT_GET, 'name'),
                 'price' => filter_input(INPUT_POST, 'price'),
                 'quantity' => filter_input(INPUT_POST, 'quantity')
             );   
@@ -28,6 +32,7 @@ if(filter_input(INPUT_POST, 'addpos')){
             //match array key to id of the product being added to the cart
             for ($i = 0; $i < count($product_ids); $i++){
                 if ($product_ids[$i] == filter_input(INPUT_GET, 'id')){
+                #if ($product_ids[$i] == filter_input(INPUT_GET, 'name')){
                     //add item quantity to the existing product in the array
                     $_SESSION['pointofsale'][$i]['quantity'] += filter_input(INPUT_POST, 'quantity');
                 }
@@ -40,7 +45,9 @@ if(filter_input(INPUT_POST, 'addpos')){
         $_SESSION['pointofsale'][0] = array
         (
             'id' => filter_input(INPUT_GET, 'id'),
+            #'id' => filter_input(INPUT_POST, 'id'),
             'name' => filter_input(INPUT_POST, 'name'),
+            #'name' => filter_input(INPUT_GET, 'name'),
             'price' => filter_input(INPUT_POST, 'price'),
             'quantity' => filter_input(INPUT_POST, 'quantity')
         );
@@ -140,6 +147,14 @@ function pre_r($array){
 
                             echo '<div class="right"><b><u>'.number_format($result_count).'</u></b> results found</div>';
                             echo 'Your search for <i>"'.$display_words.'"</i><hr />';
+
+                            // display the results
+                            while($row = mysqli_fetch_array($query)){
+                              echo '<div class="result">';
+                              echo '<a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a>';
+                              echo '</div>';
+                            }
+
                             ?>
 
 
@@ -198,12 +213,12 @@ function pre_r($array){
 
            <td>
             <input type="hidden" name="price[]" value="<?php echo $product['price']; ?>">
-            ₱ <?php echo number_format($product['price']); ?>
+            ৳ <?php echo number_format($product['price']); ?>
           </td>  
 
            <td>
             <input type="hidden" name="total" value="<?php echo $product['quantity'] * $product['price']; ?>">
-            ₱ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
+            ৳ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
            <td>
                <a href="pos.php?action=delete&id=<?php echo $product['id']; ?>">
                     <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div>
