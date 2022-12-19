@@ -111,14 +111,16 @@ function pre_r($array){
                               <li class="nav-item">
                                 <a class="nav-link" href="#others" data-toggle="tab">9</a>
                               </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#search" data-toggle="tab">Search/Scan</a>
+                              </li>
                             </ul>
 
                             <!-- Search form -->
-        
+  
                             <form action="" method="GET" name="">
 	                            <table>
 		                            <tr>
-                                  <form class="form-inline" method="post" action="possearch.php">
 			                            <td><input type="text" name="k" value="<?php echo isset($_GET['k']) ? $_GET['k'] : ''; ?>" placeholder="Search" /></td>
 			                            <td><input type="submit" name="" value="Search" /></td>
 		                            </tr>
@@ -149,12 +151,18 @@ function pre_r($array){
 
                             echo '<div class="right"><b><u>'.number_format($result_count).'</u></b> results found</div>';
                             echo 'Your search for <i>"'.$display_words.'"</i><hr />';
+                            while($row = mysqli_fetch_array($query)){
+                              echo '<div class="result"><a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a></div>';
+                              //add button to each product
+                              echo '<form method="post" action="pos.php?action=add&id='.$row['PRODUCT_ID'].'>' ;
+                              echo '<input type="hidden" name="quantity" value="1" />';
+                              echo '<input type="hidden" name="name" value="'.$row['NAME'].'" />';
+                              echo '<input type="hidden" name="price" value="'.$row['PRICE'].'" />';
+                              echo '<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />';
+                              echo '</form>';
+                            }
                             ?>
-                                
-                                  
 
-
-<?php include 'possearch.php'; ?>
 <!-- TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->
 <?php include 'postabpane.php'; ?>
 <!-- END TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->

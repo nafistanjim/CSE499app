@@ -1,9 +1,18 @@
                               <!-- Search -->
                               <div class="tab-pane fade in mt-2" id="search">
                                 <?php
-                                    $x = isset($_GET['k']) ? $_GET['k'] : '';?>
-                                      <?php  $query = 'SELECT * FROM product WHERE NAME='$x' GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
-                                        $result = mysqli_query($db, $query);
+                                    $x = isset($_GET['k']) ? $_GET['k'] : '';
+                                    $search_string = "SELECT * FROM product WHERE ";
+                                    $display_words = "";
+                                    $keywords = explode(' ', $k);			
+                                    foreach ($keywords as $word){
+	                                    $search_string .= "NAME LIKE '%".$word."%' OR ";
+	                                    $display_words .= $word.' ';
+                                    }
+
+                                    ?>
+                                      <?php  #$query = 'SELECT * FROM product WHERE NAME LIKE '$x' GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
+                                        $result = mysqli_query($db, $search_string );
 
                                         if ($result):
                                             if(mysqli_num_rows($result)>0):
@@ -27,8 +36,8 @@
                                         endif;
                                     endif;   
                                     ?>
-                                    </div>
-                                </div>
+                                  </div>
+                              </div>
 
 <!-- wala na di nadala sa tab pane, dalom nana di na part -->
                             </div>
