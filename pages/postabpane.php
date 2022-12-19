@@ -274,7 +274,7 @@
                                 </div>
 
                                 <!-- Search Box -->
-                                <div class="tab-pane fade in mt-2" id="others">
+                                <div class="tab-pane fade in mt-2" id="">
                                   <div class="row">
                                     
                                       <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=9 GROUP BY PRODUCT_CODE ORDER by PRODUCT_CODE ASC';
