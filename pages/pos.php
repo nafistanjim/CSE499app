@@ -94,7 +94,7 @@ function pre_r($array){
                                 <a class="nav-link" href="#" data-toggle="#Acifix">3</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#cpu" data-toggle="tab">4</a>
+                                <a class="nav-link" href="#" data-toggle="tab">4</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="#monitor" data-toggle="tab">5</a>
@@ -112,6 +112,7 @@ function pre_r($array){
                                 <a class="nav-link" href="#others" data-toggle="tab">9</a>
                               </li>
                             </ul>
+
                             <!-- Search form -->
         
                             <form action="" method="GET" name="">
@@ -147,19 +148,11 @@ function pre_r($array){
 
                             echo '<div class="right"><b><u>'.number_format($result_count).'</u></b> results found</div>';
                             echo 'Your search for <i>"'.$display_words.'"</i><hr />';
-
-                            // display the results
-                            while($row = mysqli_fetch_array($query)){
-                              echo '<div class="result">';
-                              echo '<a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a>';
-                              echo '  ';
-                              // add product to POS the
-                              echo '<a href="pos.php?action=add&id='.$row['PRODUCT_ID'].'" class="btn btn-success btn-sm">Add Item</a>';
-                              echo '</div>';
-
-                            }
-
+                            
                             ?>
+                                
+                                  
+
 
 
 <!-- TAB PANE AREA - ANG UNOD KA TABS ARA SA TABPANE.PHP -->
