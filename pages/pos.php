@@ -118,6 +118,7 @@ function pre_r($array){
                             <form action="" method="GET" name="">
 	                            <table>
 		                            <tr>
+                                  <form class="form-inline" method="post" action="possearch.php">
 			                            <td><input type="text" name="k" value="<?php echo isset($_GET['k']) ? $_GET['k'] : ''; ?>" placeholder="Search" /></td>
 			                            <td><input type="submit" name="" value="Search" /></td>
 		                            </tr>
