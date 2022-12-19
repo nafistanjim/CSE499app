@@ -1,4 +1,4 @@
-                              <!-- 8th TAB -->
+                              <!-- Search -->
                               <div class="tab-pane fade in mt-2" id="search">
                                 <?php
                                     $k=$_POST[k];
