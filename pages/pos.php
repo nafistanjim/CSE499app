@@ -148,7 +148,11 @@ function pre_r($array){
 
                             echo '<div class="right"><b><u>'.number_format($result_count).'</u></b> results found</div>';
                             echo 'Your search for <i>"'.$display_words.'"</i><hr />';
-                            
+                            while($row = mysqli_fetch_array($query)){
+                              echo '<div class="result"><a href="product.php?id='.$row['PRODUCT_ID'].'">'.$row['NAME'].'</a></div>';
+                              echo' ';
+                               
+                            }
                             ?>
                                 
                                   
