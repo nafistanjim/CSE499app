@@ -122,14 +122,14 @@ function pre_r($array){
 			                            <td><input type="submit" name="" value="Search" /></td>
                                   <td><input type="button" value="Scan" name="Scan"/></td>
 		                            </tr>
-	                            </table>
-                            </form>
-                            <?php 
+                                <?php 
                                 if(isset($_POST['Scan'])){
                                     $file = file_get_contents("output.txt", true);
                                     echo $file;
                                 }
                             ?>
+	                            </table>
+                            </form>
                             
                             <?php
                             // get the search terms from the url
