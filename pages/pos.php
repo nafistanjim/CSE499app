@@ -112,7 +112,7 @@ function pre_r($array){
                                 <a class="nav-link" href="#others" data-toggle="tab">9</a>
                               </li>
                             </ul>
-
+                            <a href="../pages/scanner/index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Open Scanner</a>
                             <!-- Search form -->
   
                             <form action="" method="GET" name="">
